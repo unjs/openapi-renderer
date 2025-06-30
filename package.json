@@ -1,0 +1,54 @@
+{
+  "name": "openapi-renderer",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "unjs/openapi-renderer",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "obuild",
+    "dev": "node --experimental-strip-types --watch playground/index.mjs",
+    "lint": "eslint . && prettier -c .",
+    "lint:fix": "automd && eslint . --fix && prettier -w .",
+    "prepack": "pnpm build",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+    "test:types": "tsc --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@kong/spec-renderer": "^1.95.0",
+    "@scalar/api-reference": "^1.32.1",
+    "@types/node": "^24.0.4",
+    "@vitest/coverage-v8": "^3.2.4",
+    "automd": "^0.4.0",
+    "changelogen": "^0.6.1",
+    "eslint": "^9.29.0",
+    "eslint-config-unjs": "^0.5.0",
+    "obuild": "^0.2.1",
+    "prettier": "^3.6.1",
+    "srvx": "^0.8.1",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@kong/spec-renderer": "^1",
+    "@scalar/api-reference": "^1"
+  },
+  "peerDependenciesMeta": {
+    "@kong/spec-renderer": {
+      "optional": true
+    },
+    "@scalar/api-reference": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@10.12.3"
+}
