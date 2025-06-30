@@ -63,8 +63,8 @@ function objectToAttributes(obj: Record<string, any>): string {
 
     // Convert key to kebab-case more efficiently
     const kebabKey = key
-      .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-      .replace(/_/g, '-')
+      .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
+      .replace(/_/g, "-")
       .toLowerCase();
 
     // Escape quotes in value
