@@ -1,5 +1,5 @@
 import { serve } from "srvx";
-import { renderToString } from "../src/renderer.ts";
+import { renderHTML } from "../src/renderer.ts";
 
 const DEMO_SPEC = "https://petstore.swagger.io/v2/swagger.json";
 
@@ -39,7 +39,7 @@ serve({
       );
     }
 
-    const html = renderToString({
+    const html = renderHTML({
       renderer,
       spec: query.get("spec") || DEMO_SPEC,
     });

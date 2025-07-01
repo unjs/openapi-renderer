@@ -10,7 +10,7 @@ const renderers = {
   kong,
 } as const;
 
-export function renderToString(opts: RenderOptions): string {
+export function renderHTML(opts: RenderOptions): string {
   const renderer = renderers[opts.renderer || "swagger"];
   if (!renderer) {
     throw new Error(
