@@ -7,14 +7,12 @@ export default function render(opts: RenderOptions): string {
   const CDN_URL =
     opts.kong?.cdnURL || "https://cdn.jsdelivr.net/npm/@kong/spec-renderer@^1";
 
-  const showPoweredBy = opts.kong?.showPoweredBy === false ? undefined : true;
-
   const kongConfig: KongConfig = {
     ...opts.kong,
     specUrl: opts.spec,
     navigationType: "hash", // Use hash-based navigation
     hideInsomniaTryIt: true, // Hide the "Try it in Insomnia" button
-    showPoweredBy,
+    showPoweredBy: opts.kong?.showPoweredBy === false ? undefined : true, // Pass `undefined` if showPoweredBy is false
   };
 
   const componentAttributes = objectToAttributes(kongConfig);
