@@ -1,9 +1,9 @@
 import type { ApiReferenceConfiguration as ScalarConfig } from "@scalar/api-reference";
-import type { RenderOptions } from "../types.ts";
+import type { RenderHTMLOptions } from "../types.ts";
 
 // https://github.com/scalar/scalar
 
-export default function render(opts: RenderOptions): string {
+export default function render(opts: RenderHTMLOptions): string {
   const CDN_URL =
     opts.scalar?.cdnURL ||
     "https://cdn.jsdelivr.net/npm/@scalar/api-reference@^1";

@@ -1,17 +1,20 @@
 import { serve } from "srvx";
-import { renderHTML } from "../src/renderer.ts";
+import { renderResponse } from "openapi-renderer";
 
 const DEMO_SPEC = "https://petstore.swagger.io/v2/swagger.json";
 
 serve({
-  fetch(request) {
-    const { searchParams: query } = new URL(request.url);
+  fetch(req) {
+    const { searchParams: query } = new URL(req.url);
 
-    const renderer = query.get("renderer");
+    if (query.get("renderer")) {
+      return renderResponse(req, {
+        allowCustomQuery: { spec: true, renderer: true },
+      });
+    }
 
-    if (!renderer) {
-      return new Response(
-        /* html */ `<html>
+    return new Response(
+      /* html */ `<html>
           <head>
             <title>OpenAPI Renderer Playground</title>
           </head>
@@ -31,22 +34,11 @@ serve({
             </p>
           </body>
         </html>`,
-        {
-          headers: {
-            "Content-Type": "text/html; charset=utf-8",
-          },
+      {
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
         },
-      );
-    }
-
-    const html = renderHTML({
-      renderer,
-      spec: query.get("spec") || DEMO_SPEC,
-    });
-    return new Response(html, {
-      headers: {
-        "Content-Type": "text/html; charset=utf-8",
       },
-    });
+    );
   },
 });

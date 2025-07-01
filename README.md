@@ -35,23 +35,37 @@ Simple [OpenAPI](https://www.openapis.org/) spec to HTML renderer.
 
 </div>
 
-## Usage Example
+## Usage
+
+### `renderResponse`
+
+Using `renderResponse(req, options)` you can render UI into standard [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object from an incoming [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request).
+
+**Example:** Using [srvx](https://srvx.h3.dev) (same code works with Node.js, Deno and Bun)
 
 ```js
 import { serve } from "srvx";
-import { renderHTML } from "openapi-renderer";
+import { renderResponse } from "openapi-renderer";
 
 serve({
-  fetch(request) {
-    const html = renderHTML({
+  fetch(req) {
+    return renderResponse(req, {
       spec: "https://petstore.swagger.io/v2/swagger.json",
-    });
-    return new Response(html, {
-      headers: {
-        "Content-Type": "text/html; charset=utf-8",
-      },
+      allowCustomQuery: { spec: false, renderer: true },
     });
   },
+});
+```
+
+### `renderHTML`
+
+Using `renderHTML(options)` you can render UI into an HTML string.
+
+```js
+import { renderHTML } from "openapi-renderer";
+
+const html = renderHTML({
+  spec: "https://petstore.swagger.io/v2/swagger.json",
 });
 ```
 

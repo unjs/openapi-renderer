@@ -3,7 +3,7 @@ import type { SpecRendererNitroConfig as KongConfig } from "@kong/spec-renderer"
 /**
  * OpenAPI render configuration
  */
-export interface RenderOptions {
+export interface RenderHTMLOptions {
   /**
    * The renderer to use for the OpenAPI documentation.
    *
@@ -54,5 +54,12 @@ export interface RenderOptions {
    */
   kong?: Partial<KongConfig> & {
     cdnURL?: string;
+  };
+}
+
+export interface RenderResponseOptions extends RenderHTMLOptions {
+  allowCustomQuery?: {
+    spec?: boolean;
+    renderer?: boolean;
   };
 }
