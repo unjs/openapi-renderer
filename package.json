@@ -1,7 +1,7 @@
 {
   "name": "openapi-renderer",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Simple OpenAPI spec to HTML renderer",
   "repository": "unjs/openapi-renderer",
   "license": "MIT",
   "sideEffects": false,

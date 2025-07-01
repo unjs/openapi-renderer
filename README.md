@@ -7,24 +7,43 @@
 
 <!-- /automd -->
 
-Simple [OpenAPI](https://www.openapis.org/) spec renderer.
+Simple [OpenAPI](https://www.openapis.org/) spec to HTML renderer.
 
-Supported UIs:
+## Supported Renderers
 
-- [Swagger](https://github.com/swagger-api/swagger-ui)
-- [Scalar](https://github.com/scalar/scalar)
-- [Kong](https://github.com/Kong/spec-renderer)
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e88beff0-9cf1-4265-9d24-264b61ba262c" alt="Swagger" />
+      <br />
+      <a href="https://github.com/swagger-api/swagger-ui">Swagger</a>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/2f43f3f0-eb33-40ae-a26c-29a668242a26" alt="Scalar" />
+      <br />
+      <a href="https://github.com/scalar/scalar">Scalar</a>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/11f9f386-ee95-437e-afcf-ced320a1284f" alt="Kong"  />
+      <br />
+      <a href="https://github.com/Kong/spec-renderer">Kong</a>
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ## Usage Example
 
 ```js
 import { serve } from "srvx";
-import { renderToString } from "../src/render.ts";
+import { renderHTML } from "openapi-renderer";
 
 serve({
   fetch(request) {
-    const html = renderToString({
-      renderer: "swagger", // or "scalar" or "kong"
+    const html = renderHTML({
       spec: "https://petstore.swagger.io/v2/swagger.json",
     });
     return new Response(html, {
