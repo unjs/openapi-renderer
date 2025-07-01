@@ -1,9 +1,11 @@
 # openapi-renderer
 
-<!-- automd:badges color=yellow -->
+<!-- automd:badges color=yellow packagephobia bundlejs -->
 
 [![npm version](https://img.shields.io/npm/v/openapi-renderer?color=yellow)](https://npmjs.com/package/openapi-renderer)
 [![npm downloads](https://img.shields.io/npm/dm/openapi-renderer?color=yellow)](https://npm.chart.dev/openapi-renderer)
+[![bundle size](https://img.shields.io/bundlejs/size/openapi-renderer?color=yellow)](https://bundlejs.com/?q=openapi-renderer)
+[![install size](https://badgen.net/packagephobia/install/openapi-renderer?color=yellow)](https://packagephobia.com/result?p=openapi-renderer)
 
 <!-- /automd -->
 
