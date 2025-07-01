@@ -12,7 +12,7 @@ export default function render(opts: RenderOptions): string {
     specUrl: opts.spec,
     navigationType: "hash", // Use hash-based navigation
     hideInsomniaTryIt: true, // Hide the "Try it in Insomnia" button
-    showPoweredBy: true, // Enable the "Powered by Kong" section (we ❤️ UnJS + Nitro)
+    showPoweredBy: opts.kong?.showPoweredBy === false ? undefined : true, // Pass `undefined` if showPoweredBy is false
   };
 
   const componentAttributes = objectToAttributes(kongConfig);
