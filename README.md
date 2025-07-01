@@ -39,9 +39,9 @@ Simple [OpenAPI](https://www.openapis.org/) spec to HTML renderer.
 
 ### `renderResponse`
 
-Using `renderResponse(req, options)` you can render UI into standard [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object from an incoming [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request).
+Using `renderResponse(req, options)`, you can render UI into a standard [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object from an incoming [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request).
 
-**Example:** Using [srvx](https://srvx.h3.dev) (same code works with Node.js, Deno and Bun)
+**Example:** Using [srvx](https://srvx.h3.dev) (same code works with Node.js, Deno, and Bun)
 
 ```js
 import { serve } from "srvx";
@@ -59,7 +59,7 @@ serve({
 
 ### `renderHTML`
 
-Using `renderHTML(options)` you can render UI into an HTML string.
+Using `renderHTML(options)`, you can render UI into an HTML string.
 
 ```js
 import { renderHTML } from "openapi-renderer";
@@ -82,28 +82,11 @@ const html = renderHTML({
 ## Development
 
 - Clone this repository
-- Install latest LTS version of [Node.js](https://nodejs.org/en/)
+- Install the latest LTS version of [Node.js](https://nodejs.org/en/)
 - Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 - Install dependencies using `pnpm install`
 - Run interactive tests using `pnpm dev`
 
 ## License
 
-<!-- automd:contributors license=MIT -->
-
-Published under the [MIT](https://github.com/unjs/openapi-renderer/blob/main/LICENSE) license.
-Made by [community](https://github.com/unjs/openapi-renderer/graphs/contributors) 💛
-<br><br>
-<a href="https://github.com/unjs/openapi-renderer/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=unjs/openapi-renderer" />
-</a>
-
-<!-- /automd -->
-
-<!-- automd:with-automd -->
-
----
-
-_🤖 auto updated with [automd](https://automd.unjs.io)_
-
-<!-- /automd -->
+💛 Published under the [MIT](https://github.com/unjs/openapi-renderer/blob/main/LICENSE) license.
