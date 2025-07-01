@@ -10,7 +10,7 @@
 Simple [OpenAPI](https://www.openapis.org/) spec to HTML renderer.
 
 > [!NOTE]
->  This is a new project, so feel free to share your ideas and contribute. **Contributions are more than welcome!**
+> This is a new project, so feel free to share your ideas and contribute. **Contributions are more than welcome!**
 
 ## Supported Renderers
 
