@@ -26,7 +26,7 @@ Simple [OpenAPI](https://www.openapis.org/) spec to HTML renderer.
       <a href="https://github.com/swagger-api/swagger-ui">Swagger</a>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/2f43f3f0-eb33-40ae-a26c-29a668242a26" alt="Scalar" />
+      <img src="https://github.com/user-attachments/assets/848d74e6-cdd8-4d09-b327-5dfc26c9e916" alt="Scalar" />
       <br />
       <a href="https://github.com/scalar/scalar">Scalar</a>
     </td>
