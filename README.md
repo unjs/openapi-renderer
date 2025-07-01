@@ -24,7 +24,7 @@ import { renderToString } from "../src/render.ts";
 serve({
   fetch(request) {
     const html = renderToString({
-      renderer: "swagger", // or "scalar"
+      renderer: "swagger", // or "scalar" or "kong"
       spec: "https://petstore.swagger.io/v2/swagger.json",
     });
     return new Response(html, {
@@ -44,6 +44,7 @@ serve({
 - `styles`: Additional HTML styles.
 - `scalar`: Scalar UI configuration.
 - `swagger`: Swagger UI configuration.
+- `kong`: Kong Spec Renderer UI configuration.
 
 ## Development
 

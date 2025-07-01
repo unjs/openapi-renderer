@@ -29,5 +29,6 @@ export function renderToString(opts: RenderOptions): string {
     styles: opts.styles || "",
     scalar: opts.scalar,
     swagger: opts.swagger,
+    kong: opts.kong,
   });
 }
