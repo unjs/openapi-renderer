@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@kong/spec-renderer": "^1.95.0",
-    "@scalar/api-reference": "^1.32.1",
+    "@scalar/core": "^0.3.5",
     "@types/node": "^24.0.4",
     "@vitest/coverage-v8": "^3.2.4",
     "automd": "^0.4.0",
@@ -40,13 +40,13 @@
   },
   "peerDependencies": {
     "@kong/spec-renderer": "^1",
-    "@scalar/api-reference": "^1"
+    "@scalar/core": "^0"
   },
   "peerDependenciesMeta": {
     "@kong/spec-renderer": {
       "optional": true
     },
-    "@scalar/api-reference": {
+    "@scalar/core": {
       "optional": true
     }
   },
