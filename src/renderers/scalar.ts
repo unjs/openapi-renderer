@@ -1,4 +1,7 @@
-import { getHtmlDocument, type HtmlRenderingConfiguration as ScalarConfig } from '@scalar/core/libs/html-rendering'
+import {
+  getHtmlDocument,
+  type HtmlRenderingConfiguration as ScalarConfig,
+} from "@scalar/core/libs/html-rendering";
 import type { RenderHTMLOptions } from "../types.ts";
 
 // https://github.com/scalar/scalar
