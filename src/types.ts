@@ -1,4 +1,4 @@
-import type { HtmlRenderingConfiguration as ScalarConfig } from "@scalar/core/libs/html-rendering";
+import type { ApiReferenceConfiguration as ScalarConfig } from "@scalar/api-reference";
 import type { SpecRendererNitroConfig as KongConfig } from "@kong/spec-renderer";
 /**
  * OpenAPI render configuration
@@ -38,7 +38,7 @@ export interface RenderHTMLOptions {
   /**
    * Scalar UI configuration.
    */
-  scalar?: Partial<Omit<ScalarConfig, "cdn" | "pageTitle">> & {
+  scalar?: Partial<ScalarConfig> & {
     cdnURL?: string;
   };
 
