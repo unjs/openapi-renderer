@@ -11,8 +11,6 @@ export default function render(opts: RenderHTMLOptions): string {
   const scalarConfig: ScalarConfig = {
     ...opts.scalar,
     url: opts.spec,
-    // @ts-expect-error (missing types?)
-    spec: { url: opts.specURL, ...opts.scalar?.spec },
   };
 
   return /* html */ `<!doctype html>
@@ -25,13 +23,13 @@ export default function render(opts: RenderHTMLOptions): string {
         <style>${opts.styles}</style>
       </head>
       <body>
-        <script
-          id="api-reference"
-          data-configuration="${JSON.stringify(scalarConfig)
-            .split('"')
-            .join("&quot;")}"
-        ></script>
+        <div id="app"></div>
+
         <script src="${CDN_URL}"></script>
+
+        <script>
+          Scalar.createApiReference('#app', ${JSON.stringify(scalarConfig)})
+        </script>
       </body>
     </html>`;
 }
