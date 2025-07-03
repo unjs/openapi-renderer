@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v0.1.1
 
 [compare changes](https://github.com/unjs/openapi-renderer/compare/v0.1.0...v0.1.1)
@@ -20,4 +19,3 @@
 
 - Hans Pagel ([@hanspagel](https://github.com/hanspagel))
 - Pooya Parsa ([@pi0](https://github.com/pi0))
-
