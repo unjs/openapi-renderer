@@ -31,6 +31,10 @@ serve({
                 <li>
                   <a href="/?renderer=kong&spec=${DEMO_SPEC}">Kong UI</a>
                 </li>
+                <li>
+                  <a href="/?renderer=redoc&spec=${DEMO_SPEC}">Redoc UI</a>
+                </li>
+              </ul>
             </p>
           </body>
         </html>`,

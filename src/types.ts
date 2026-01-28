@@ -1,5 +1,7 @@
 import type { ApiReferenceConfiguration as ScalarConfig } from "@scalar/api-reference";
 import type { SpecRendererNitroConfig as KongConfig } from "@kong/spec-renderer";
+import type { RedocRawOptions as RedocOptions } from "redoc";
+
 /**
  * OpenAPI render configuration
  */
@@ -9,7 +11,7 @@ export interface RenderHTMLOptions {
    *
    * @default "swagger"
    */
-  renderer?: "swagger" | "scalar" | "kong";
+  renderer?: "swagger" | "scalar" | "kong" | "redoc";
 
   /**
    * The route to the OpenAPI specification to render.
@@ -53,6 +55,13 @@ export interface RenderHTMLOptions {
    * Kong Spec Renderer configuration.
    */
   kong?: Partial<KongConfig> & {
+    cdnURL?: string;
+  };
+
+  /**
+   * Redoc configuration.
+   */
+  redoc?: Partial<RedocOptions> & {
     cdnURL?: string;
   };
 }

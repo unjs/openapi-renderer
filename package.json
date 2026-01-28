@@ -40,13 +40,17 @@
   },
   "peerDependencies": {
     "@kong/spec-renderer": "^1",
-    "@scalar/api-reference": "^1"
+    "@scalar/api-reference": "^1",
+    "redoc": "^2"
   },
   "peerDependenciesMeta": {
     "@kong/spec-renderer": {
       "optional": true
     },
     "@scalar/api-reference": {
+      "optional": true
+    },
+    "redoc": {
       "optional": true
     }
   },

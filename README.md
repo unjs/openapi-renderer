@@ -35,6 +35,11 @@ Simple [OpenAPI](https://www.openapis.org/) spec to HTML renderer.
       <br />
       <a href="https://github.com/Kong/spec-renderer">Kong</a>
     </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/61a14f99-8eae-4583-8ca3-85bff363e953" alt="Redoc" />
+      <br />
+      <a href="https://github.com/Redocly/redoc">Redoc</a>
+    </td>
   </tr>
 </table>
 
@@ -76,13 +81,14 @@ const html = renderHTML({
 
 ## Options
 
-- `renderer`: Renderer UI. Possible values: `"swagger"` | `"scalar"` | `"kong"`
+- `renderer`: Renderer UI. Possible values: `"swagger"` | `"scalar"` | `"kong"` | `"redoc"`
 - `spec`: URL to OpenAPI spec JSON to render
 - `meta`: Metadata for the OpenAPI documentation.
 - `styles`: Additional HTML styles.
 - `scalar`: Scalar UI configuration.
 - `swagger`: Swagger UI configuration.
 - `kong`: Kong Spec Renderer UI configuration.
+- `redoc`: Redoc UI configuration.
 
 ## Development
 

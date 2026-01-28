@@ -3,11 +3,13 @@ import type { RenderHTMLOptions, RenderResponseOptions } from "./types.ts";
 import swagger from "./renderers/swagger.ts";
 import scalar from "./renderers/scalar.ts";
 import kong from "./renderers/kong.ts";
+import redoc from "./renderers/redoc.ts";
 
 const renderers = {
   swagger,
   scalar,
   kong,
+  redoc,
 } as const;
 
 export function renderHTML(opts: RenderHTMLOptions = {}): string {
@@ -24,6 +26,7 @@ export function renderHTML(opts: RenderHTMLOptions = {}): string {
     scalar: opts.scalar,
     swagger: opts.swagger,
     kong: opts.kong,
+    redoc: opts.redoc,
   });
 }
 
