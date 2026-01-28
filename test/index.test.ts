@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { renderHTML } from "../src/render.ts";
 
-const rendererNames = ["kong", "scalar", "swagger"] as const;
+const rendererNames = ["kong", "scalar", "swagger", "redoc"] as const;
 
 describe("renderHTML", () => {
   for (const name of rendererNames) {
