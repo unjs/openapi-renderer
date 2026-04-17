@@ -33,12 +33,10 @@ export function renderResponse(
 ): Response | Promise<Response> {
   const query = new URL(req.url).searchParams;
 
-  const spec =
-    (opts.allowCustomQuery?.spec && (query.get("spec") as any)) || opts.spec;
+  const spec = (opts.allowCustomQuery?.spec && (query.get("spec") as any)) || opts.spec;
 
   const renderer =
-    (opts.allowCustomQuery?.renderer && (query.get("renderer") as any)) ||
-    opts.renderer;
+    (opts.allowCustomQuery?.renderer && (query.get("renderer") as any)) || opts.renderer;
 
   let html: string;
 
