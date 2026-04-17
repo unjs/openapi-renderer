@@ -3,8 +3,7 @@ import type { RenderHTMLOptions } from "../types.ts";
 // https://github.com/swagger-api/swagger-ui
 
 export default function render(opts: RenderHTMLOptions) {
-  const CDN_URL =
-    opts.swagger?.cdnURL || "https://cdn.jsdelivr.net/npm/swagger-ui-dist@^5";
+  const CDN_URL = opts.swagger?.cdnURL || "https://cdn.jsdelivr.net/npm/swagger-ui-dist@^5";
 
   return /* html */ `<!doctype html>
     <html lang="en">

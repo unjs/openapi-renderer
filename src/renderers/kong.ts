@@ -4,8 +4,7 @@ import type { RenderHTMLOptions } from "../types.ts";
 // https://github.com/Kong/spec-renderer
 
 export default function render(opts: RenderHTMLOptions): string {
-  const CDN_URL =
-    opts.kong?.cdnURL || "https://cdn.jsdelivr.net/npm/@kong/spec-renderer@^1";
+  const CDN_URL = opts.kong?.cdnURL || "https://cdn.jsdelivr.net/npm/@kong/spec-renderer@^1";
 
   const kongConfig: KongConfig = {
     ...opts.kong,
