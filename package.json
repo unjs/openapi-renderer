@@ -24,19 +24,19 @@
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@kong/spec-renderer": "^1.95.0",
-    "@scalar/api-reference": "^1.32.1",
-    "@types/node": "^24.0.4",
-    "@vitest/coverage-v8": "^3.2.4",
-    "automd": "^0.4.0",
-    "changelogen": "^0.6.1",
-    "eslint": "^9.29.0",
-    "eslint-config-unjs": "^0.5.0",
-    "obuild": "^0.2.1",
-    "prettier": "^3.6.1",
-    "srvx": "^0.8.1",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "@kong/spec-renderer": "1.95.0",
+    "@scalar/api-reference": "1.32.1",
+    "@types/node": "24.0.8",
+    "@vitest/coverage-v8": "3.2.4",
+    "automd": "0.4.0",
+    "changelogen": "0.6.1",
+    "eslint": "9.30.0",
+    "eslint-config-unjs": "0.5.0",
+    "obuild": "0.2.1",
+    "prettier": "3.6.2",
+    "srvx": "0.8.1",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   },
   "peerDependencies": {
     "@kong/spec-renderer": "^1",
