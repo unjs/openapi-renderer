@@ -8,10 +8,16 @@ export default function render(opts: RenderHTMLOptions): string {
     opts.scalar?.cdnURL ||
     "https://cdn.jsdelivr.net/npm/@scalar/api-reference@^1";
 
-  const scalarConfig: ScalarConfig = {
-    ...opts.scalar,
-    url: opts.spec,
-  };
+  const { cdnURL: _, ...userConfig } = opts.scalar || {};
+
+  // With `sources`, the top-level `spec` option is ignored
+  // https://scalar.com/products/api-references/configuration#multiple-configurations-with-sources-advanced
+  const scalarConfig: ScalarConfig = userConfig.sources?.length
+    ? userConfig
+    : {
+        ...userConfig,
+        url: opts.spec,
+      };
 
   return /* html */ `<!doctype html>
     <html lang="en">
