@@ -84,6 +84,42 @@ const html = renderHTML({
 - `swagger`: Swagger UI configuration.
 - `kong`: Kong Spec Renderer UI configuration.
 
+### Multiple sources
+
+You can render multiple OpenAPI documents with the `scalar` and `swagger` renderers. When configured, the top-level `spec` option is ignored by the corresponding renderer.
+
+```js
+// https://scalar.com/products/api-references/configuration#multiple-configurations-with-sources-advanced
+renderHTML({
+  renderer: "scalar",
+  scalar: {
+    sources: [
+      { url: "/openapi.json", title: "My API" },
+      {
+        url: "/api/auth/open-api/generate-schema",
+        title: "Auth",
+        default: true,
+      },
+    ],
+  },
+});
+
+// https://swagger.io/docs/open-source-tools/swagger-ui/usage/configuration/#:~:text=An%20array%20of%20API%20definition%20objects
+renderHTML({
+  renderer: "swagger",
+  swagger: {
+    urls: [
+      { url: "/openapi.json", name: "My API" },
+      {
+        url: "/api/auth/open-api/generate-schema",
+        name: "Auth",
+        default: true,
+      },
+    ],
+  },
+});
+```
+
 ## Development
 
 - Clone this repository

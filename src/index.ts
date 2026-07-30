@@ -1,3 +1,8 @@
-export type { RenderHTMLOptions, RenderResponseOptions } from "./types.ts";
+export type {
+  RenderHTMLOptions,
+  RenderResponseOptions,
+  ScalarSource,
+  SwaggerUrl,
+} from "./types.ts";
 
 export { renderHTML, renderResponse } from "./render.ts";
