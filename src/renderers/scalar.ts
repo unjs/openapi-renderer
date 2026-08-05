@@ -1,5 +1,6 @@
 import type { ApiReferenceConfiguration as ScalarConfig } from "@scalar/api-reference";
 import type { RenderHTMLOptions } from "../types.ts";
+import { escapeHTML } from "../utils.ts";
 
 // https://github.com/scalar/scalar
 
@@ -18,8 +19,8 @@ export default function render(opts: RenderHTMLOptions): string {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="${opts.meta?.description}" />
-        <title>${opts.meta?.title}</title>
+        <meta name="description" content="${escapeHTML(opts.meta?.description || "")}" />
+        <title>${escapeHTML(opts.meta?.title || "")}</title>
         <style>${opts.styles}</style>
       </head>
       <body>
