@@ -1,5 +1,6 @@
 import type { SpecRendererNitroConfig as KongConfig } from "@kong/spec-renderer";
 import type { RenderHTMLOptions } from "../types.ts";
+import { escapeHTML } from "../utils.ts";
 
 // https://github.com/Kong/spec-renderer
 
@@ -22,8 +23,8 @@ export default function render(opts: RenderHTMLOptions): string {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="${opts.meta?.description || ""}" />
-        <title>${opts?.meta?.title || ""}</title>
+        <meta name="description" content="${escapeHTML(opts.meta?.description || "")}" />
+        <title>${escapeHTML(opts.meta?.title || "")}</title>
         <link rel="stylesheet" href="${CDN_URL}/dist/spec-renderer.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
