@@ -35,7 +35,7 @@
     "obuild": "^0.2.1",
     "prettier": "^3.6.1",
     "srvx": "^0.8.1",
-    "typescript": "^5.8.3",
+    "typescript": "^7.0.2",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
