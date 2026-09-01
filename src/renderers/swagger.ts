@@ -1,4 +1,5 @@
 import type { RenderHTMLOptions } from "../types.ts";
+import { escapeHTML, escapeScriptJSON } from "../utils.ts";
 
 // https://github.com/swagger-api/swagger-ui
 
@@ -11,8 +12,8 @@ export default function render(opts: RenderHTMLOptions) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="${opts.meta?.description}" />
-        <title>${opts.meta?.title}</title>
+        <meta name="description" content="${escapeHTML(opts.meta?.description)}" />
+        <title>${escapeHTML(opts.meta?.title)}</title>
         <link rel="stylesheet" href="${CDN_URL}/swagger-ui.css" />
         <style>${opts.styles}</style>
       </head>
@@ -26,7 +27,7 @@ export default function render(opts: RenderHTMLOptions) {
         <script>
           window.onload = () => {
             window.ui = SwaggerUIBundle({
-              url: ${JSON.stringify(opts.spec)},
+              url: ${escapeScriptJSON(opts.spec)},
               dom_id: "#swagger-ui",
               presets: [
                 SwaggerUIBundle.presets.apis,
