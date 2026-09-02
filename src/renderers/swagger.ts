@@ -14,14 +14,14 @@ export default function render(opts: RenderHTMLOptions) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="${escapeHTML(opts.meta?.description)}" />
         <title>${escapeHTML(opts.meta?.title)}</title>
-        <link rel="stylesheet" href="${CDN_URL}/swagger-ui.css" />
+        <link rel="stylesheet" href="${escapeHTML(`${CDN_URL}/swagger-ui.css`)}" />
         <style>${opts.styles}</style>
       </head>
       <body>
         <div id="swagger-ui"></div>
-        <script src="${CDN_URL}/swagger-ui-bundle.js" crossorigin></script>
+        <script src="${escapeHTML(`${CDN_URL}/swagger-ui-bundle.js`)}" crossorigin></script>
         <script
-          src="${CDN_URL}/swagger-ui-standalone-preset.js"
+          src="${escapeHTML(`${CDN_URL}/swagger-ui-standalone-preset.js`)}"
           crossorigin
         ></script>
         <script>

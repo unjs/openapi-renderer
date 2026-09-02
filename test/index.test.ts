@@ -77,4 +77,42 @@ describe("renderHTML escaping", () => {
       `base-path="&amp;quot; onfocus=&amp;quot;alert(1)"`,
     );
   });
+
+  const cdnURL = `" onerror="alert(1)`;
+
+  it("escapes the kong cdnURL in both the stylesheet href and the module import", () => {
+    const result = renderHTML({ renderer: "kong", kong: { cdnURL } });
+
+    expect(result).not.toContain(`onerror="alert(1)`);
+    expect(result).toContain(
+      `href="&quot; onerror=&quot;alert(1)/dist/spec-renderer.css"`,
+    );
+    // The import specifier is a script context, so it needs JSON quoting rather
+    // than HTML entities.
+    expect(result).toContain(
+      String.raw`from "\" onerror=\"alert(1)/dist/kong-spec-renderer.web-component.es.js"`,
+    );
+  });
+
+  it("escapes the scalar cdnURL used as the script src", () => {
+    const result = renderHTML({ renderer: "scalar", scalar: { cdnURL } });
+
+    expect(result).not.toContain(`onerror="alert(1)`);
+    expect(result).toContain(`src="&quot; onerror=&quot;alert(1)"`);
+  });
+
+  it("escapes the swagger cdnURL at every sink", () => {
+    const result = renderHTML({ renderer: "swagger", swagger: { cdnURL } });
+
+    expect(result).not.toContain(`onerror="alert(1)`);
+    expect(result).toContain(
+      `href="&quot; onerror=&quot;alert(1)/swagger-ui.css"`,
+    );
+    expect(result).toContain(
+      `src="&quot; onerror=&quot;alert(1)/swagger-ui-bundle.js"`,
+    );
+    expect(result).toContain(
+      `src="&quot; onerror=&quot;alert(1)/swagger-ui-standalone-preset.js"`,
+    );
+  });
 });

@@ -26,7 +26,7 @@ export default function render(opts: RenderHTMLOptions): string {
       <body>
         <div id="app"></div>
 
-        <script src="${CDN_URL}"></script>
+        <script src="${escapeHTML(CDN_URL)}"></script>
 
         <script>
           Scalar.createApiReference('#app', ${escapeScriptJSON(scalarConfig)})

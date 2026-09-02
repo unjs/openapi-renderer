@@ -1,6 +1,6 @@
 import type { SpecRendererNitroConfig as KongConfig } from "@kong/spec-renderer";
 import type { RenderHTMLOptions } from "../types.ts";
-import { escapeHTML } from "../utils.ts";
+import { escapeHTML, escapeScriptJSON } from "../utils.ts";
 
 // https://github.com/Kong/spec-renderer
 
@@ -18,6 +18,11 @@ export default function render(opts: RenderHTMLOptions): string {
 
   const componentAttributes = objectToAttributes(kongConfig);
 
+  const stylesheetURL = escapeHTML(`${CDN_URL}/dist/spec-renderer.css`);
+  const moduleURL = escapeScriptJSON(
+    `${CDN_URL}/dist/kong-spec-renderer.web-component.es.js`,
+  );
+
   return /* html */ `<!doctype html>
     <html lang="en">
       <head>
@@ -25,7 +30,7 @@ export default function render(opts: RenderHTMLOptions): string {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="${escapeHTML(opts.meta?.description)}" />
         <title>${escapeHTML(opts?.meta?.title)}</title>
-        <link rel="stylesheet" href="${CDN_URL}/dist/spec-renderer.css" />
+        <link rel="stylesheet" href="${stylesheetURL}" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
@@ -38,7 +43,7 @@ export default function render(opts: RenderHTMLOptions): string {
       <body>
         <kong-spec-renderer spec="" ${componentAttributes} />
         <script type="module">
-        import { registerKongSpecRenderer } from '${CDN_URL}/dist/kong-spec-renderer.web-component.es.js'
+        import { registerKongSpecRenderer } from ${moduleURL}
         const hash = window.location.hash;
         if (hash) {
           const path = hash.substring(1); // Remove the # character
