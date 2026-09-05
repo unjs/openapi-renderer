@@ -24,23 +24,23 @@
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@kong/spec-renderer": "^1.95.0",
-    "@scalar/api-reference": "^1.32.1",
-    "@types/node": "^24.0.4",
-    "@vitest/coverage-v8": "^3.2.4",
-    "automd": "^0.4.0",
-    "changelogen": "^0.6.1",
-    "eslint": "^9.29.0",
-    "eslint-config-unjs": "^0.5.0",
-    "obuild": "^0.2.1",
-    "prettier": "^3.6.1",
-    "srvx": "^0.8.1",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "@kong/spec-renderer": "^1.113.7",
+    "@scalar/api-reference": "^1.67.0",
+    "@types/node": "^24.13.3",
+    "@vitest/coverage-v8": "^3.2.7",
+    "automd": "^0.4.3",
+    "changelogen": "^0.6.2",
+    "eslint": "^9.39.5",
+    "eslint-config-unjs": "^0.6.2",
+    "obuild": "^0.4.39",
+    "prettier": "^3.9.6",
+    "srvx": "^0.12.8",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
   },
   "peerDependencies": {
-    "@kong/spec-renderer": "^1",
-    "@scalar/api-reference": "^1"
+    "@kong/spec-renderer": "^1.113.7",
+    "@scalar/api-reference": "^1.67.0"
   },
   "peerDependenciesMeta": {
     "@kong/spec-renderer": {
@@ -50,5 +50,5 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.12.3"
+  "packageManager": "pnpm@10.34.5"
 }
